@@ -1,0 +1,5 @@
+.git
+.gitignore
+mysql_data
+vendor
+node_modules

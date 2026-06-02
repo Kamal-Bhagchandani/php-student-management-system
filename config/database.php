@@ -1,8 +1,8 @@
 <?php
-$host = 'localhost';
-$dbname = 'student_management';
-$username = 'root';
-$password = '';
+$dbHost = getenv('DB_HOST') ?: 'localhost';
+$dbName = getenv('DB_NAME') ?: 'student_management';
+$dbUser = getenv('DB_USER') ?: 'root';
+$dbPassword = getenv('DB_PASSWORD') ?: '';
 
 $options = [
     PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
@@ -10,5 +10,5 @@ $options = [
     PDO::ATTR_EMULATE_PREPARES => false,
 ];
 
-$dsn = "mysql:host={$host};dbname={$dbname};charset=utf8mb4";
-$conn = new PDO($dsn, $username, $password, $options);
+$dsn = "mysql:host={$dbHost};dbname={$dbName};charset=utf8mb4";
+$conn = new PDO($dsn, $dbUser, $dbPassword, $options);

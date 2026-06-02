@@ -20,8 +20,8 @@ CREATE TABLE IF NOT EXISTS students (
 );
 
 INSERT INTO admins (username, password)
-VALUES ('admin', '$2y$12$c/gFk5PrxIhYzs3PlzCPauPabF/OlqkQQA1YRUTUF5U4Ot6YCXGv2')
-ON DUPLICATE KEY UPDATE username = VALUES(username);
+VALUES ('admin', '$2y$10$BzzeMrP6ryzqPhWxQGBq0eTlSt.ILj7Y1vkr6zprGh0nqBbH2rZgu')
+ON DUPLICATE KEY UPDATE password = VALUES(password);
 
 INSERT INTO students (student_id, name, email, phone, course, year, address) VALUES
 ('101', 'Kamal Bhagchandani', 'kamal@gmail.com', '9876543210', 'Information Technology', 3, 'Pune'),

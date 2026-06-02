@@ -23,6 +23,35 @@ A responsive PHP 8 and MySQL web application for administrators to manage studen
 
 ## Installation
 
+### Docker Setup
+
+Use this if you do not want to install PHP or MySQL on your PC.
+
+1. Start the PHP web server and MySQL database:
+
+   ```bash
+   docker compose up --build
+   ```
+
+2. Open `http://localhost:8000` in your browser.
+
+The MySQL container imports `database.sql` automatically the first time it starts. Database data is stored in the `mysql_data` Docker volume, so it will stay available after stopping the containers.
+
+To stop the app:
+
+```bash
+docker compose down
+```
+
+To reset the database and re-import `database.sql`:
+
+```bash
+docker compose down -v
+docker compose up --build
+```
+
+### Local PHP/MySQL Setup
+
 1. Clone the repository.
 2. Import `database.sql` into MySQL.
 3. Update database credentials in `config/database.php` if your MySQL username or password differs from the defaults.
